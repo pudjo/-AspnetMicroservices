@@ -1,0 +1,67 @@
+﻿Each package is licensed to you by its owner. NuGet is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.
+
+Package Manager Console Host Version 6.2.0.146
+
+Type 'get-help NuGet' to see all available NuGet commands.
+
+PM> install icrosoft.Extensions.Caching.StackExchangeRedis
+The pipeline has been stopped.
+PM> install Microsoft.Extensions.Caching.StackExchangeRedis
+The pipeline has been stopped.
+PM> install-Package Microsoft.Extensions.Caching.StackExchangeRedis
+Restoring packages for D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\BucketAPI.csproj...
+Installing NuGet package Microsoft.Extensions.Caching.StackExchangeRedis 6.0.5.
+Writing assets file to disk. Path: D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\obj\project.assets.json
+Restored D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\BucketAPI.csproj (in 290 ms).
+Successfully installed 'Microsoft.Extensions.Caching.Abstractions 6.0.0' to BucketAPI
+Successfully installed 'Microsoft.Extensions.Caching.StackExchangeRedis 6.0.5' to BucketAPI
+Successfully installed 'Microsoft.Extensions.DependencyInjection.Abstractions 6.0.0' to BucketAPI
+Successfully installed 'Microsoft.Extensions.Options 6.0.0' to BucketAPI
+Successfully installed 'Microsoft.Extensions.Primitives 6.0.0' to BucketAPI
+Successfully installed 'Microsoft.NETCore.Platforms 5.0.0' to BucketAPI
+Successfully installed 'Microsoft.Win32.Registry 5.0.0' to BucketAPI
+Successfully installed 'Microsoft.Win32.SystemEvents 5.0.0' to BucketAPI
+Successfully installed 'Pipelines.Sockets.Unofficial 2.2.0' to BucketAPI
+Successfully installed 'StackExchange.Redis 2.2.4' to BucketAPI
+Successfully installed 'System.Configuration.ConfigurationManager 5.0.0' to BucketAPI
+Successfully installed 'System.Diagnostics.PerformanceCounter 5.0.0' to BucketAPI
+Successfully installed 'System.Drawing.Common 5.0.0' to BucketAPI
+Successfully installed 'System.IO.Pipelines 5.0.0' to BucketAPI
+Successfully installed 'System.Runtime.CompilerServices.Unsafe 6.0.0' to BucketAPI
+Successfully installed 'System.Security.AccessControl 5.0.0' to BucketAPI
+Successfully installed 'System.Security.Cryptography.ProtectedData 5.0.0' to BucketAPI
+Successfully installed 'System.Security.Permissions 5.0.0' to BucketAPI
+Successfully installed 'System.Security.Principal.Windows 5.0.0' to BucketAPI
+Successfully installed 'System.Windows.Extensions 5.0.0' to BucketAPI
+Executing nuget actions took 296 ms
+Time Elapsed: 00:00:02.5223175
+PM> Update-Package ProjectName BucketAPI
+Update-Package : 'ProjectName' was not installed in any project. Update failed.
+At line:1 char:1
++ Update-Package ProjectName BucketAPI
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Update-Package], Exception
+    + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PackageManagement.PowerShellCmdlets.UpdatePac 
+   kageCommand
+ 
+Time Elapsed: 00:00:00.7964716
+PM> Update-Package -ProjectName BucketAPI
+Restoring packages for D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\BucketAPI.csproj...
+Installing NuGet package Swashbuckle.AspNetCore 6.3.1.
+Installing NuGet package Roslynator.Analyzers 4.1.1.
+Generating MSBuild file D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\obj\BucketAPI.csproj.nuget.g.props.
+Writing assets file to disk. Path: D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\obj\project.assets.json
+Restored D:\Development\NeoSimply\MicroServices\src\Services\Bucket\BucketAPI\BucketAPI.csproj (in 75 ms).
+Successfully uninstalled 'Roslynator.Analyzers 4.1.0' from BucketAPI
+Successfully uninstalled 'Swashbuckle.AspNetCore 6.2.3' from BucketAPI
+Successfully uninstalled 'Swashbuckle.AspNetCore.Swagger 6.2.3' from BucketAPI
+Successfully uninstalled 'Swashbuckle.AspNetCore.SwaggerGen 6.2.3' from BucketAPI
+Successfully uninstalled 'Swashbuckle.AspNetCore.SwaggerUI 6.2.3' from BucketAPI
+Successfully installed 'Roslynator.Analyzers 4.1.1' to BucketAPI
+Successfully installed 'Swashbuckle.AspNetCore 6.3.1' to BucketAPI
+Successfully installed 'Swashbuckle.AspNetCore.Swagger 6.3.1' to BucketAPI
+Successfully installed 'Swashbuckle.AspNetCore.SwaggerGen 6.3.1' to BucketAPI
+Successfully installed 'Swashbuckle.AspNetCore.SwaggerUI 6.3.1' to BucketAPI
+Executing nuget actions took 493 ms
+Time Elapsed: 00:00:04.6534453
+PM> 
