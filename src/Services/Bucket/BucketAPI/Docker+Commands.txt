@@ -2,7 +2,14 @@
 Docker Commands
 
 
-docker run -d -p 6379:6379 --name aspnetrun-redis redis 
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
+
+PS D:\Development\NeoSimply\MicroServices\src> docker compose 
+
+volumes: ~/mongo/data:/data/db
+-f .\docker-compose.yml  -f .\docker-compose.override.yml up
+
+portainer.io
 
 
 Example docker hub pull :
