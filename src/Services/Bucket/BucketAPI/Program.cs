@@ -1,4 +1,6 @@
+//using BucketAPI.GrpcServices;
 using BucketAPI.Repositories;
+//using DiscountGRPC.Protos;
 using FluentAssertions.Common;
 using Microsoft.Extensions.Configuration;
 
@@ -12,6 +14,12 @@ builder.Services.AddStackExchangeRedisCache(options =>
 });
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+var serviceCollection = builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
+//             (o => o.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]));
+
+//builder.Services.AddScoped<DiscountGrpcService>();
 
 
 builder.Services.AddControllers();

@@ -1,4 +1,6 @@
 ﻿using BucketAPI.Entities;
+using DiscountGRPC.Protos;
+using Grpc.Net.Client;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 
@@ -7,10 +9,13 @@ namespace BucketAPI.Repositories;
 public class BasketRepository : IBasketRepository
 {
     private readonly IDistributedCache _redisCache;
-
-    public BasketRepository(IDistributedCache redisCache)
+    private readonly IConfiguration _configuration;
+    
+    public BasketRepository(IConfiguration configuration, IDistributedCache redisCache)
     {
         _redisCache = redisCache ?? throw new ArgumentNullException(nameof(redisCache));
+        _configuration = configuration;
+
     }
 
     public async Task<ShoppingCart> GetBasket(string userName)
@@ -34,4 +39,16 @@ public class BasketRepository : IBasketRepository
     {
         await _redisCache.RemoveAsync(userName);
     }
+    public async Task<CouponModel> GetDiscount(string productName)
+    {
+
+        using var channel = GrpcChannel.ForAddress("http://localhost:5003");
+
+        var client = new DiscountProtoService.DiscountProtoServiceClient(channel);
+        var discountRequest = new GetDiscountRequest { ProductName = productName };
+
+        return await client.GetDiscountAsync(discountRequest);
+
+    }
+
 }

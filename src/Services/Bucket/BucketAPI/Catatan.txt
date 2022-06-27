@@ -64,4 +64,10 @@ Successfully installed 'Swashbuckle.AspNetCore.SwaggerGen 6.3.1' to BucketAPI
 Successfully installed 'Swashbuckle.AspNetCore.SwaggerUI 6.3.1' to BucketAPI
 Executing nuget actions took 493 ms
 Time Elapsed: 00:00:04.6534453
-PM> 
+
+
+
+Install-Package Grpc.Net.Client
+Install-Package Google.Protobuf
+Install-Package Grpc.Tools
+
