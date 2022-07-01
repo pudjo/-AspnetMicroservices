@@ -42,8 +42,9 @@ public class BasketRepository : IBasketRepository
     public async Task<CouponModel> GetDiscount(string productName)
     {
 
-        using var channel = GrpcChannel.ForAddress("http://localhost:5003");
+        string address = _configuration.GetSection("DatabaseSettings").GetSection("GRPCAddress").Value;
 
+        using var channel = GrpcChannel.ForAddress(address);
         var client = new DiscountProtoService.DiscountProtoServiceClient(channel);
         var discountRequest = new GetDiscountRequest { ProductName = productName };
 

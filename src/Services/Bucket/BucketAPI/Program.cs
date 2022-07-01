@@ -11,7 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetValue<string>("CacheSettings:ConnectionString");
+
 });
+
+//builder.Services.Configure<MySettingsModel>(Configuration.GetSection("MySettings"));
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 var serviceCollection = builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
