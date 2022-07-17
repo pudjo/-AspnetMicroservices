@@ -1,9 +1,6 @@
-//using BucketAPI.GrpcServices;
-using BucketAPI.Repositories;
-//using DiscountGRPC.Protos;
-using FluentAssertions.Common;
-using Microsoft.Extensions.Configuration;
 
+using BucketAPI.Repositories;
+using MassTransit;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,19 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetValue<string>("CacheSettings:ConnectionString");
-
 });
-
-//builder.Services.Configure<MySettingsModel>(Configuration.GetSection("MySettings"));
-
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 var serviceCollection = builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-//builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
-//             (o => o.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]));
-
-//builder.Services.AddScoped<DiscountGrpcService>();
-
+builder.Services.AddMassTransit(config =>
+{
+    config.UsingRabbitMq((ctx, cfg) =>
+    {
+      cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
+    });
+});
+//builder.Services.AddMassTransitHostedService();
+// tidak diperlukan lagi setelah versi 8
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

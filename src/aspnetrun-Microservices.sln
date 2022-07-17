@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{5DDD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogAPI", "Services\Catalog\CatalogAPI\CatalogAPI.csproj", "{CA177B00-0A9D-4C89-9F92-F60C62F317BC}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4CBE15E1-3999-442C-8B16-303BD6804F84}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC090AAE-9408-4BEE-BDF4-E61C07F01A45}"
 	ProjectSection(SolutionItems) = preProject
 		init_mongo.js = init_mongo.js
@@ -38,6 +36,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Application", "Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Infrastructure", "Services\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{21690B71-396F-4C62-849B-6B1415D8AD6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{F1E2F6C4-08E7-45CF-8E9A-A286AD315D9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{1B7F0FC0-A1BF-4586-968B-25898A40636A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0E3110B0-401A-4697-8F19-613466C0F97D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,10 +52,6 @@ Global
 		{CA177B00-0A9D-4C89-9F92-F60C62F317BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA177B00-0A9D-4C89-9F92-F60C62F317BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA177B00-0A9D-4C89-9F92-F60C62F317BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CBE15E1-3999-442C-8B16-303BD6804F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CBE15E1-3999-442C-8B16-303BD6804F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CBE15E1-3999-442C-8B16-303BD6804F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CBE15E1-3999-442C-8B16-303BD6804F84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCCCC8F3-0605-4756-AA6E-0410EEB1BBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCCCC8F3-0605-4756-AA6E-0410EEB1BBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCCCC8F3-0605-4756-AA6E-0410EEB1BBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,6 +80,14 @@ Global
 		{21690B71-396F-4C62-849B-6B1415D8AD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21690B71-396F-4C62-849B-6B1415D8AD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21690B71-396F-4C62-849B-6B1415D8AD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B7F0FC0-A1BF-4586-968B-25898A40636A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7F0FC0-A1BF-4586-968B-25898A40636A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7F0FC0-A1BF-4586-968B-25898A40636A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7F0FC0-A1BF-4586-968B-25898A40636A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3110B0-401A-4697-8F19-613466C0F97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3110B0-401A-4697-8F19-613466C0F97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3110B0-401A-4697-8F19-613466C0F97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3110B0-401A-4697-8F19-613466C0F97D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +106,7 @@ Global
 		{91AD2E97-E776-4848-A52C-B3B152C3754A} = {A186986D-FA49-4071-B9E7-67DA3438564B}
 		{07EE31E7-8D67-40E1-9F03-2F719A93645D} = {A186986D-FA49-4071-B9E7-67DA3438564B}
 		{21690B71-396F-4C62-849B-6B1415D8AD6E} = {A186986D-FA49-4071-B9E7-67DA3438564B}
+		{1B7F0FC0-A1BF-4586-968B-25898A40636A} = {F1E2F6C4-08E7-45CF-8E9A-A286AD315D9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99938832-35E2-4754-9962-AB11A357C16B}

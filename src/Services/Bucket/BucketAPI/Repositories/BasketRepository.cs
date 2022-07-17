@@ -10,12 +10,10 @@ public class BasketRepository : IBasketRepository
 {
     private readonly IDistributedCache _redisCache;
     private readonly IConfiguration _configuration;
-    
     public BasketRepository(IConfiguration configuration, IDistributedCache redisCache)
     {
         _redisCache = redisCache ?? throw new ArgumentNullException(nameof(redisCache));
         _configuration = configuration;
-
     }
 
     public async Task<ShoppingCart?> GetBasket(string userName)
@@ -31,7 +29,6 @@ public class BasketRepository : IBasketRepository
     public async Task<ShoppingCart> UpdateBasket(ShoppingCart basket)
     {
         await _redisCache.SetStringAsync(basket.UserName, JsonConvert.SerializeObject(basket));
-
         return await GetBasket(basket.UserName);
     }
 
@@ -41,15 +38,11 @@ public class BasketRepository : IBasketRepository
     }
     public async Task<CouponModel> GetDiscount(string productName)
     {
-
         string address = _configuration.GetSection("DatabaseSettings").GetSection("GRPCAddress").Value;
-
-        using var channel = GrpcChannel.ForAddress(address);
+        using var channel = GrpcChannel.ForAddress("http://localhost:5003");
         var client = new DiscountProtoService.DiscountProtoServiceClient(channel);
         var discountRequest = new GetDiscountRequest { ProductName = productName };
 
         return await client.GetDiscountAsync(discountRequest);
-
     }
-
 }

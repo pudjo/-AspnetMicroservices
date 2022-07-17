@@ -1,25 +1,6 @@
 version: '3.4'
 
 services:
-  catalogdb:
-    image: mongo
-  bucketdb:
-    image: redis:alpine
-  discountdb:
-    image: postgres
-  orderdb:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-  pgadmin:
-    image: dpage/pgadmin4
-
-  portainer:
-    image: portainer/portainer-ce
-
-  catalogapi:
-    image: ${DOCKER_REGISTRY-}catalogapi
-    build:
-      context: .
-      dockerfile: Services\Catalog\CatalogAPI\Dockerfile
   bucketapi:
     image: ${DOCKER_REGISTRY-}bucketapi
     build:
@@ -33,17 +14,23 @@ services:
       dockerfile: Services/Discount/DiscountAPI/Dockerfile
 
 
-
   ordering.api:
     image: ${DOCKER_REGISTRY-}orderingapi
     build:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
-volumes:
-  mongo_data:
-  portainer_data:
-  postgres_data:
-  pgadmin_data:
 
+  discountgrpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
+    build:
+      context: .
+      dockerfile: Services/Discount/DiscountGRPC/Dockerfile
+
+
+  catalogapi:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/CatalogAPI/Dockerfile
 
